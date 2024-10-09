@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f0f3f8;
+  --foreground: #1b2128;
+  --lightblue: #dae6f2;
+  --backgroundbox: #fcfcfe;
+  --primary: #94b8dc;
+  --accent: #bacee8;
+  --dark: #3f6589;
+  --primaryl: #bad2e9;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #f0f3f8;
+    --foreground: #1b2128;
+    --lightblue: #dae6f2;
+    --backgroundbox: #fcfcfe;
+    --primary: #94b8dc;
+    --accent: #bacee8;
+    --dark: #3f6589;
+    --primaryl: #bad2e9;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: var(--backgroundbox);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--lightblue);
+  border-radius: 8px;
+}
+
+html {
+  /*fix select shad*/
+  overflow-y: scroll;
+}
+
+/* :root {
+  --primary-100: #94b8dc;
+  --primary-200: #bad2e9;
+  --primary-300: #e1ebf5;
+  --accent-100: #bacee8;
+  --accent-200: #bacee8;
+  --accent-300: #bacee8;
+  --background-100: #fefefe;
+  --background-200: #f1f1f1;
+  --background-300: #e5e5e5;
+  --text-100: #1b2128;
+  --text-200: #303a46;
+  --text-300: #445365;
+} */
