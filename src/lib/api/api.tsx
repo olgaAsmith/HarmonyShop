@@ -38,3 +38,24 @@ export const USERS = gql`
     }
   }
 `;
+
+export const GET_PRODUCT = gql`
+  query GetProduct($id: ID!) {
+    product(id: $id) {
+      title
+      price
+      images
+      description
+    }
+  }
+`;
+
+export const GET_USER = gql`
+  query GetUser($id: ID!) {
+    user(id: $id) {
+      id
+      name
+      avatar
+    }
+  }
+`;

@@ -5,9 +5,11 @@ import Image from 'next/image';
 import UserImage from '@/public/images/user.jpg';
 import { useUsersStore } from '@/lib/api/store/usersStore';
 import { LoadingUsers } from '../loading/home/LoadingUsers';
+import { useModalCallStore } from '@/lib/api/store/modalStore';
 
 export default function HomeUsersList() {
   const { users, loadUsers } = useUsersStore();
+  const { setIsOpen } = useModalCallStore();
 
   useEffect(() => {
     loadUsers();
@@ -16,6 +18,10 @@ export default function HomeUsersList() {
   const shuffledUsers = users
     ? [...users].sort(() => 0.5 - Math.random()).slice(0, 6)
     : [];
+
+    const handleOpenUser = (id: string) => {
+      setIsOpen(true, 'user', id);
+    };
 
   return (
     <div className='w-3/4 mx-auto my-16'>
@@ -30,23 +36,26 @@ export default function HomeUsersList() {
               <div
                 key={user.id}
                 className='flex flex-col cursor-pointer hover:bg-accent transition rounded-xl p-2'
+                onClick={() => handleOpenUser(user.id)}
               >
                 <Image
-                  width={100}
-                  height={100}
+                  width={150}
+                  height={150}
                   src={UserImage}
                   alt={user.name}
-                  className='w-full h-full object-cover rounded-full mx-auto'
+                  className='object-cover rounded-full mx-auto'
                 />
-                <div className='p-2 flex items-center justify-center'>
-                  <span className='text-lg font-semibold'>{user.name}</span>
+                <div className='p-2'>
+                  <span className='text-lg font-semibold block text-center'>
+                    {user.name}
+                  </span>
                 </div>
               </div>
             );
           })}
         </div>
       ) : (
-        <LoadingUsers></LoadingUsers>
+        <LoadingUsers />
       )}
     </div>
   );

@@ -10,6 +10,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import MapImage from '@/public/images/map.jpg';
 import { Button } from '../ui/button';
+import ButtonCallBack from './ButtonCallBack';
 
 export default function ContactUs() {
   return (
@@ -21,7 +22,7 @@ export default function ContactUs() {
           </h2>
           <Link
             href={'tel:+77777'}
-            className='flex gap-4 items-center text-lg font-bold block bg-accent p-4 rounded-xl mb-6 ease-in-out duration-300 hover:scale-105'
+            className='flex gap-4 items-center text-lg font-bold bg-accent p-4 rounded-xl mb-6 ease-in-out duration-300 hover:scale-105'
           >
             <Phone className='w-8 h-8'></Phone>
             +7 (777) 7777-777-7777
@@ -53,12 +54,12 @@ export default function ContactUs() {
               </Link>
             </li>
           </ul>
-          <Button>Click and We call you back &rarr;</Button>
+          <ButtonCallBack></ButtonCallBack>
         </div>
         <div className='w-1/2 h-80 rounded-xl'>
           <Image
-            width={100}
-            height={100}
+            width={300}
+            height={300}
             src={MapImage}
             alt='Here we are'
             className='h-full w-full object-cover rounded-xl'

@@ -14,7 +14,7 @@ const InputWithIcon = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           className={cn(
-            'flex h-full w-full rounded-lg border border-black rounded-[12px] pl-[52px] pr-4 py-2 text-lg placeholder:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black disabled:cursor-not-allowed disabled:opacity-50',
+            'bg-transparent flex h-full w-full rounded-lg border border-dark rounded-[12px] pl-[52px] pr-4 py-2 text-lg placeholder:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-dark disabled:cursor-not-allowed disabled:opacity-50',
             className
           )}
           ref={ref}

@@ -5,6 +5,7 @@ import { Nova_Mono } from 'next/font/google';
 import { ApolloWrapper } from '../../apollo-client';
 import ProfileLoader from '@/components/ProfileLoader';
 import Footer from '@/components/footer/Footer';
+import Modal from '@/components/modal/Modal';
 
 export const metadata: Metadata = {
   title: 'Harmony',
@@ -27,7 +28,11 @@ export default async function RootLayout({
         <ApolloWrapper>
           <ProfileLoader></ProfileLoader>
           <Header></Header>
-          <main>{children}</main>
+
+          <main>
+            {children} <Modal></Modal>
+          </main>
+
           <Footer></Footer>
         </ApolloWrapper>
       </body>
