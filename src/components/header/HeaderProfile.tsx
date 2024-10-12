@@ -2,7 +2,6 @@
 import { AlignJustify, CircleHelpIcon, LogOut } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { useRouter } from 'next/navigation';
-import LoginButton from '../LoginButton';
 import { Button } from '../ui/button';
 import { useAuthStore } from '@/lib/api/store/authStore';
 import { getInitials } from '@/lib/utils';
@@ -46,24 +45,28 @@ export default function HeaderProfile() {
       <Button title='Menu' variant='icon' className='flex lg:hidden'>
         <AlignJustify className='ease-in-out duration-300 hover:scale-125'></AlignJustify>
       </Button>
-      {isAuthenticated ? (
-        <div className='flex items-center gap-1 sm:gap-6'>
-          <Avatar className='w-10 h-10'>
-            <AvatarImage src={profile?.avatar} />
-            <AvatarFallback>{initials}</AvatarFallback>
-          </Avatar>
-          <Button
-            title='Logout'
-            variant='outline'
-            onClick={handleLogout}
-            className='flex items-center justify-center bg-transparent border-none '
-          >
-            <LogOut className='w-6 h-6 inline-block ease-in-out duration-300 hover:scale-125'></LogOut>
-          </Button>
-        </div>
-      ) : (
+      {
+        isAuthenticated ? (
+          <div className='flex items-center gap-1 sm:gap-6'>
+            <Avatar className='w-10 h-10'>
+              <AvatarImage src={profile?.avatar} />
+              <AvatarFallback>{initials}</AvatarFallback>
+            </Avatar>
+            <Button
+              title='Logout'
+              variant='outline'
+              onClick={handleLogout}
+              className='flex items-center justify-center bg-transparent border-none '
+            >
+              <LogOut className='w-6 h-6 inline-block ease-in-out duration-300 hover:scale-125'></LogOut>
+            </Button>
+          </div>
+        ) : (
+          ''
+        ) /* (
         <LoginButton isMiniButton={true}></LoginButton>
-      )}
+      ) */
+      }
     </div>
   );
 }
