@@ -3,7 +3,7 @@ import { PRODUCTS } from '@/lib/api/api';
 import { client } from '../../../../apollo-client';
 
 interface Products {
-  id: number;
+  id: string;
   title: string;
   price: number;
   description: string;

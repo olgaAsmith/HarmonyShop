@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import UserImage from '@/public/images/user.jpg';
 import { useUsersStore } from '@/lib/api/store/usersStore';
@@ -15,9 +15,9 @@ export default function HomeUsersList() {
     loadUsers();
   }, [loadUsers]);
 
-  const shuffledUsers = users
-    ? [...users].sort(() => 0.5 - Math.random()).slice(0, 6)
-    : [];
+  const shuffledUsers = useMemo(() => {
+    return users ? [...users].sort(() => 0.5 - Math.random()).slice(0, 6) : [];
+  }, [users]);
 
     const handleOpenUser = (id: string) => {
       setIsOpen(true, 'user', id);

@@ -3,7 +3,7 @@ import { client } from '../../../../apollo-client';
 import { USERS } from '../api';
 
 interface Users {
-  id: number;
+  id: string;
   name: string;
   email: string;
 }

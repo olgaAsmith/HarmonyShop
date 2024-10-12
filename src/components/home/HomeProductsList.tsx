@@ -1,7 +1,7 @@
 'use client';
 
 import { useProductsStore } from '@/lib/api/store/productsStore';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import DefaultImage from '@/public/images/box.jpg';
 import { LoadingProducts } from '../loading/home/LoadingProducts';
@@ -14,9 +14,10 @@ export default function HomeProductsList() {
     loadProducts();
   }, [loadProducts]);
 
-  const shuffledProducts = products
-    ? [...products].sort(() => 0.5 - Math.random()).slice(0, 3)
-    : [];
+  const shuffledProducts = useMemo(() => {
+    return products ? [...products].sort(() => 0.5 - Math.random()).slice(0, 3) : [];
+  }, [products]);
+  
 
   const handleOpenProduct = (id: string) => {
     setIsOpen(true, 'product', id);

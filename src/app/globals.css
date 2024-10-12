@@ -62,17 +62,21 @@ html {
   overflow-y: scroll;
 }
 
-/* :root {
-  --primary-100: #94b8dc;
-  --primary-200: #bad2e9;
-  --primary-300: #e1ebf5;
-  --accent-100: #bacee8;
-  --accent-200: #bacee8;
-  --accent-300: #bacee8;
-  --background-100: #fefefe;
-  --background-200: #f1f1f1;
-  --background-300: #e5e5e5;
-  --text-100: #1b2128;
-  --text-200: #303a46;
-  --text-300: #445365;
-} */
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 1.1px;
+  background: conic-gradient(#0000 10%,#bad2e9) content-box;
+  -webkit-mask: repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+       radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 calc(100% - 9px));
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: spinner-d55elj 1s infinite steps(10);
+}
+
+@keyframes spinner-d55elj {
+  to {
+     transform: rotate(1turn);
+  }
+}

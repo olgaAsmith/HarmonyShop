@@ -12,12 +12,12 @@ export default function HeaderMenu() {
       <MenuItem isActive={pathname === '/'}>
         <Link href='/'>Home</Link>
       </MenuItem>
-      <MenuItem isActive={pathname === '/store'}>
+{/*       <MenuItem isActive={pathname === '/store'}>
         <Link href='/store'>Store</Link>
       </MenuItem>
       <MenuItem isActive={pathname === '/people'}>
         <Link href='/people'>People</Link>
-      </MenuItem>
+      </MenuItem> */}
     </Menu>
   );
 }

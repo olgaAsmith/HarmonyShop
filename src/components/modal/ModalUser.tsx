@@ -25,7 +25,7 @@ export default function ModalUser({ handleClose }: ModalUser) {
     return Math.floor(Math.random() * (100 - 10) + 10);
   }
   if (loading)
-    return <div className='text-white font-bold text-[46px]'>Loading...</div>;
+    return <div className='spinner'></div>;
 
   return (
     <div className='w-full max-w-4xl max-h-[480px] bg-lightblue relative rounded-xl'>

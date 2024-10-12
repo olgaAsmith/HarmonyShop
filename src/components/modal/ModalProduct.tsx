@@ -29,7 +29,7 @@ export default function ModalProduct({ handleClose }: ModalProduct) {
   }, [data]);
 
   if (loading)
-    return <div className='text-white font-bold text-[46px]'>Loading...</div>;
+    return <div className='spinner'></div>;
 
   return (
     <div className='w-full max-w-4xl max-h-[480px] bg-lightblue relative rounded-xl'>
@@ -42,7 +42,7 @@ export default function ModalProduct({ handleClose }: ModalProduct) {
           <div className='w-1/2 flex flex-col gap-8 p-4'>
             <h2 className='text-2xl font-bold'>{data.product.title}</h2>
             <p className='text-md'>{data.product.description}</p>
-            <span className='font-bold block bg-accent p-2 w-max rounded-xl'>
+            <span className='font-bold block bg-accent p-2 w-max rounded-xl mt-auto'>
               Total: {data.product.price} $
             </span>
           </div>
