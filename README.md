@@ -24,19 +24,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Login
-
-Some pages is protected.
-
-##### To visit this pages login with:
-
-```bash
-email: "john@mail.com" 
-password: "changeme"
-```
-
 ### Deploy page:
 
 ```
-https://harmony-eta.vercel.app/
+https://harmony-shop-vercel.vercel.app/
 ```
