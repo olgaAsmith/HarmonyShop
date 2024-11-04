@@ -3,6 +3,7 @@ import { AlignJustify, CircleHelpIcon, LogOut } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { useRouter } from 'next/navigation';
 import { Button } from '../ui/button';
+
 import { useAuthStore } from '@/lib/api/store/authStore';
 import { getInitials } from '@/lib/utils';
 import { useEffect, useState } from 'react';
@@ -15,7 +16,7 @@ export default function HeaderProfile() {
 
   const { setIsOpen } = useModalCallStore();
 
-  
+
   const handleOpenModalCall = () => {
     setIsOpen(true, 'help');
   };
